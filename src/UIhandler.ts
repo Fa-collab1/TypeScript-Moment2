@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
             todoItem.textContent = `${todo.task} - Priority: ${todo.priority} - ${todo.completed ? 'Completed' : 'Not completed'} - Created: ${todo.createdDate} - Completed: ${todo.completedDate ? todo.completedDate : 'Not completed yet'}`;
             todoListElement.appendChild(todoItem);
 
+
+
+if (!todo.completed) {
+
             // Add a 'Mark as completed' button
             const completeButton = document.createElement('button');
             completeButton.textContent = 'Mark as completed';
@@ -43,6 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateUI();
             };
             todoItem.appendChild(completeButton);
+        } else {
+            // Add a 'Revoke completion' button
+            const revokeButton = document.createElement('button');
+            revokeButton.textContent = 'Revoke completion';
+            revokeButton.onclick = () => {
+                todoList.revokeTodoCompleted(index);
+                updateUI();
+            };
+            todoItem.appendChild(revokeButton);
+        }
+
+
+
+
+            // Add a 'Delete' button
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.onclick = () => {
+                todoList.deleteTodo(index);
+                updateUI();
+            };
+            todoItem.appendChild(deleteButton);
+
+
         });
     }
 

@@ -35,13 +35,23 @@
       }
     }
   
-    markTodoUncompleted(todoIndex: number): void {
+    revokeTodoCompleted(todoIndex: number): void {
       if (this.todos[todoIndex]) {
         this.todos[todoIndex].completed = false;
+        this.todos[todoIndex].completedDate = undefined;
+        this.saveToLocalStorage();
+      }
+    }
+
+
+    deleteTodo(todoIndex: number): void {
+      if (this.todos[todoIndex]) {
+        this.todos.splice(todoIndex, 1); // remove the todo at index
         this.saveToLocalStorage();
       }
     }
   
+
 
 
     getTodos(): Todo[] {
