@@ -76,7 +76,18 @@ th, td {
     text-align: left;
     padding: 2vw 3vw;
     border-bottom: 0.1vw solid #f0f0f0;
+ 
 }
+
+th, td {
+    text-align: left;
+    padding: 2vw 3vw;
+    border-bottom: 0.1vw solid #f0f0f0;
+    word-wrap: break-word;
+    max-width: 27vw;
+
+}
+
 
 th {
     
@@ -107,7 +118,7 @@ table button {
     border-radius: 1vw;
     font-size: 1.2vw;
     transition: background-color 0.3s ease;
-    margin: 0vw 0.1vw 0vw 0.1vw;
+    margin: 0.1vw;
 }
 
 table button:hover {
@@ -170,11 +181,13 @@ table button:hover {
     th {
         font-size: 1.6vh; 
         padding: 2vh;         
-    }
+  }
 
     td {
         font-size: 1.2vh; 
         padding: 0.5vh 2vh 0.5vh 2vh; 
+        word-wrap: break-word;
+        max-width: 120vh;
     }
 
     table button {
