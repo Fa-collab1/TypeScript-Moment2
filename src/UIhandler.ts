@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const todos = todoList.getTodos();
         todos.forEach((todo, index) => {
             const todoItem = document.createElement('li');
-            todoItem.textContent = `${todo.task} - Priority: ${todo.priority} - ${todo.completed ? 'Completed' : 'Not completed'}`;
+            todoItem.textContent = `${todo.task} - Priority: ${todo.priority} - ${todo.completed ? 'Completed' : 'Not completed'} - Created: ${todo.createdDate} - Completed: ${todo.completedDate ? todo.completedDate : 'Not completed yet'}`;
             todoListElement.appendChild(todoItem);
 
             // Add a 'Mark as completed' button

@@ -2,6 +2,8 @@
     task: string;
     completed: boolean;
     priority: number; // 1 till 3, där 1 är högsta prioritet
+    createdDate: string;
+    completedDate?: string;
   }
 
   export class TodoList {
@@ -17,19 +19,31 @@
         return false;
       }
   
-      const newTodo: Todo = { task, completed: false, priority };
+      const newTodo: Todo = { task, completed: false, priority, createdDate: new Date().toISOString().split('T')[0]};
       this.todos.push(newTodo);
       this.saveToLocalStorage();
       return true;
     }
+
+
   
     markTodoCompleted(todoIndex: number): void {
       if (this.todos[todoIndex]) {
         this.todos[todoIndex].completed = true;
+        this.todos[todoIndex].completedDate = new Date().toISOString().split('T')[0];
         this.saveToLocalStorage();
       }
     }
   
+    markTodoUncompleted(todoIndex: number): void {
+      if (this.todos[todoIndex]) {
+        this.todos[todoIndex].completed = false;
+        this.saveToLocalStorage();
+      }
+    }
+  
+
+
     getTodos(): Todo[] {
       return this.todos;
     }
