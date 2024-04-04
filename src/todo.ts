@@ -14,8 +14,8 @@
     }
   
     addTodo(task: string, priority: number): boolean {
-      if (!task || priority < 1 || priority > 3) {
-        console.error("Felaktiga värden för task eller priority");
+      if (!task || priority < 1 || priority > 3) { // task får inte vara tom och priority måste vara mellan 1 och 3 (men task kommer inte kunna vara tom pga. required-attributet i input-elementet i index.html)
+        console.error("Invalid values for task or priority"); //kommer inte heller kunna hända då vi har fasta värden i dropdown-menyn (men den här ska ju kunna användas till andra projekt också så det är bra att ha med det här ändå)
         return false;
       }
   
@@ -51,9 +51,6 @@
       }
     }
   
-
-
-
     getTodos(): Todo[] {
       return this.todos;
     }
