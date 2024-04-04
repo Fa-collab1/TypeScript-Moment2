@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+</head>
+<body>
+    <h1>Lest you forget!</h1>
+    <form id="todo-form">
+        <input type="text" id="todo-task" name="task" placeholder="Task to add" required />
+        <select id="todo-priority" name="priority">
+            <option value="1">High</option>
+            <option value="2">Medium</option>
+            <option value="3">Low</option>
+        </select>
+        <button type="submit">Add task</button>
+    </form>
+    
+    <ul id="todo-list"></ul>
+
+    <script type="module" src="./UIhandler.ts"></script>
+</body>
+</html>
