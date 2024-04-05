@@ -2,7 +2,6 @@
 
 Detta README-dokument ger en översikt över Lest you forget!-lösningen som har distribuerats [här](https://joni2307-typescript-moment2-628bed4d16d9.herokuapp.com/). Lösningen är konstruerad med TypeScript, HTML och CSS.
 
-
 ## Innehållsförteckning
 
 - [Översikt](#översikt)
@@ -55,8 +54,7 @@ Projektet använder följande beroenden:
 - **TypeScript**: Ett övermängd av JavaScript som lägger till valfri statisk typning. ("typescript": "^5.4.4" med "compilerOptions": {"outDir": "./dist","target": "es5","module": "commonjs","strict": true,"lib": ["es2016", "dom"]}})
 - **Parcel**: En webbapplikationspaketare som hjälper till att paketera tillgångar som JavaScript-, CSS- och HTML-filer. ("@parcel/packager-raw-url": "^2.12.0","@parcel/transformer-webmanifest": "^2.12.0","parcel": "^2.12.0")
 
- ## Kontakt
-- Utvecklare: [Joni2307](mailto:joni2307@student.miun.se)
-skapad inom kursen VT2024 DT208G Datateknik GR (B), Programmering i TypeScript (distans)
+## Kontakt
 
- 
+- Utvecklare: [Joni2307](mailto:joni2307@student.miun.se)
+  skapad inom kursen VT2024 DT208G Datateknik GR (B), Programmering i TypeScript (distans)
