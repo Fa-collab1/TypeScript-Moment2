@@ -48,21 +48,30 @@ export class TodoList {
     }
   }
 
-  editTodo(todoIndex: number, task: string, priority: number): void {
+  editTodo(todoIndex: number, task: string, priority: number): boolean {
     // Redigerar en specifik todo
+    
+    if (!task || priority < 1 || priority > 3) {
+      return false;
+    }
+
     if (this.todos[todoIndex]) {
       this.todos[todoIndex].task = task;
       this.todos[todoIndex].priority = priority;
       this.saveToLocalStorage(); // Spara ändringar i lokal lagring
+      return true;
     }
+    return false;
   }
 
-  deleteTodo(todoIndex: number): void {
+  deleteTodo(todoIndex: number): boolean {
     // Tar bort en specifik todo
     if (this.todos[todoIndex]) {
       this.todos.splice(todoIndex, 1); // Ta bort todo vid angivet index
       this.saveToLocalStorage(); // Spara ändringar i lokal lagring
+      return true;
     }
+    return false;
   }
 
   getTodos(): Todo[] {
