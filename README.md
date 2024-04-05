@@ -1,6 +1,6 @@
 # Lest you forget! README
 
-Detta README-dokument ger en omfattande översikt över Lest you forget!-lösningen som har distribuerats på [https://joni2307-typescript-moment2-628bed4d16d9.herokuapp.com/](https://joni2307-typescript-moment2-628bed4d16d9.herokuapp.com/). Lösningen är konstruerad med TypeScript, HTML och CSS.
+Detta README-dokument ger en omfattande översikt över Lest you forget!-lösningen som har distribuerats [här]([https://joni2307-typescript-moment2-628bed4d16d9.herokuapp.com/](https://joni2307-typescript-moment2-628bed4d16d9.herokuapp.com/). Lösningen är konstruerad med TypeScript, HTML och CSS.
 
 ## Innehållsförteckning
 
