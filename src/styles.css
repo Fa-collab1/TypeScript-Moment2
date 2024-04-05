@@ -1,3 +1,4 @@
+/* Importerar Comic Neue typsnitt från Google Fonts. */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
 body {
@@ -7,8 +8,10 @@ body {
     background-color: #698eba; 
     color: #6A1B9A; 
     box-sizing: border-box;
+    /* Anpassar box-modellen för bättre layouthantering. */
 }
 
+/* Centrerar rubriken, ändrar storlek baserat på skärmstorlek, och lägger till en textskugga. */
 h1 {
     text-align: center;
     font-size: 5vw;
@@ -16,6 +19,7 @@ h1 {
     text-shadow: 0.5vw 0.5vw 0.5vw rgba(0, 0, 0, 0.2);
 }
 
+/* Stylar formuläret för att ha en blå bakgrund, flexbox layout och en skugga för djup. */
 form#todo-form {
     background: #0056b3;
     padding: 2vw; 
@@ -29,39 +33,77 @@ form#todo-form {
     box-sizing: border-box;
 }
 
+/* Definierar storlek, fyllning och kantlinje för formulärfält. */
 form#todo-form input[type="text"],
 form#todo-form select {
     font-size: 1.5vw;
     padding: 1vw;
     border: 0.2vw solid #f0f0f0;
     border-radius: 1vw;
-    
 }
 
-form#todo-form button {
+/* Stylar knappar inuti formuläret med en viss storlek och andra attribut. */
+form#todo-form div button {
     font-size: 1.5vw;
     padding: 1vw;
-    background-color: #fff; 
-    color: #333; 
     border: 0.2vw solid #f0f0f0; 
     border-radius: 1vw;
     cursor: pointer;
-    
+    color: whitesmoke;
+    width: 15vw;
 }
 
-form#todo-form button:hover {
-    background-color: #c9c9c9; 
+/* Stylar knappar för att lägga till, spara och redigera todos. */
+#addButton, #saveButton, .editButton {
+    background-color: black;
+    color: whitesmoke;
 }
 
+/* Stylar knappar för att kasta, återställa och ta bort todos. */
+#discardButton, #resetButton, .deleteButton {
+    background-color: #b30000;
+}
+
+/* Stylar hover-effekten för knappar för att lägga till, spara och redigera todos. */
+#addButton:hover, #saveButton:hover, .editButton:hover {
+    background-color: rgba(0, 0, 0, 0.681);
+}
+
+/* Stylar hover-effekten för knappar för att kasta, återställa och ta bort todos. */
+#discardButton:hover, #resetButton:hover, .deleteButton:hover {
+    background-color: #fd0202;
+}
+
+/* Stylar knappar för att markera todos som kompletta. */
+.completeButton {
+    background-color: #205f20;
+}
+
+.revokeButton {
+    background-color: #ff4d4d;
+}
+
+/* Stylar hover-effekten för knappar för att markera todos som kompletta. */
+.completeButton:hover {
+    background-color: #4c954c;
+}
+
+/* Stylar hover-effekten för knappar för att återkalla klarmarkeringar av todos. */
+.revokeButton:hover {
+    background-color: #ed8787;
+}
+
+/* Stylar listan för att visa data. */
 ul#todo-list {
     list-style: none;
     padding: 0;
     margin: auto;
 }
 
+/* Stylar tabellen för att visa data. */
 table {
     border-collapse: collapse;
-    margin:2vw;
+    margin: 2vw;
     padding: 2vw;
     width: 96%;
     background-color: #fff;
@@ -69,46 +111,48 @@ table {
     border-radius: 2vw;
     overflow: hidden;
     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.2);
-    
 }
 
+/* Stylar tabellrubriker och tabellceller. */
 th, td {
     text-align: left;
     padding: 2vw 3vw;
     border-bottom: 0.1vw solid #f0f0f0;
- 
 }
 
+/* Stylar tabellrubriker och tabellceller med ordbrytning och maximal bredd. */
 th, td {
     text-align: left;
     padding: 2vw 3vw;
     border-bottom: 0.1vw solid #f0f0f0;
     word-wrap: break-word;
     max-width: 27vw;
-
 }
 
-
+/* Stylar tabellrubriker för att visa datatyp. */
 th {
-    
     background-color: #0056b3;
     color: #ffffff;
     font-size: 1.6vw;
 }
 
+/* Stylar hover-effekten för tabellrader när de markeras. */
 tbody tr:hover {
     background-color: #f5f5f5;
 }
 
+/* Stylar jämna tabellrader. */
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
+/* Stylar tabellceller för att visa data. */
 td {
     color: #333333;
     font-size: 1.2vw;
 }
 
+/* Stylar knappar i tabellen för att redigera eller ta bort todos. */
 table button {
     cursor: pointer;
     padding: 1vw 1.5vw;
@@ -121,17 +165,41 @@ table button {
     margin: 0.1vw;
 }
 
-table button:hover {
-    background-color: #305b8a;
+
+    /* sätt bredder på de olika kolumnerna */
+    th:first-child,
+    td:first-child {
+        width: 50%;
+    }
     
-}
+    th:nth-child(2),
+    td:nth-child(2), 
+    th:nth-child(3),
+    td:nth-child(3), 
+    th:nth-child(4),
+    td:nth-child(4) 
+    
+    {
+        width: 10%;
+    }
+    
+    
+    th:nth-child(5),
+    td:nth-child(5) {
+        width: 20%;
+    }
+    
 
 
-/* Media query for 16:9 aspect ratio */
+
+/* Anpassar layouten för breda skärmar med en aspektratio större än 1.6. */
 @media screen and (min-aspect-ratio: 1.6) {
+    /* Justerar storleken på huvudrubriken för att vara mindre på breda skärmar. */
     h1 {
         font-size: 3vw; 
     }
+    
+    /* Anpassar padding, marginaler och border-radie för formuläret på breda skärmar. */
     form#todo-form {
         padding: 2vh; 
         margin: 2vh;
@@ -143,20 +211,18 @@ table button:hover {
         align-items: center;
     }
 
+    /* Justerar bredden på textinmatningsfältet på breda skärmar. */
     form#todo-form input[type="text"] {
         width: 60%; 
     }
 
+    /* Justerar bredden på rullgardinsmenyn på breda skärmar. */
     form#todo-form select {
         width: 10%; 
         text-align: center;
     }
-
-    form#todo-form button {
-        width: 10%;
-    }
-    
-
+  
+    /* Anpassar fontstorlek och fyllning för textinmatningsfält och rullgardinsmeny på breda skärmar. */
     form#todo-form input[type="text"],
     form#todo-form select {
         font-size: 1.5vh; 
@@ -164,25 +230,29 @@ table button:hover {
         border-radius: 1vh;
     }
 
-    form#todo-form button {
+    /* Anpassar knappstorlek och fyllning för knappar inuti formuläret på breda skärmar. */
+    form#todo-form div button {
         font-size: 1.5vh; 
         padding: 1vh; 
         border-radius: 1vh;
+        width: 15vh;
     }
 
+    /* Justerar marginaler, padding, bredd och border-radie för tabellen på breda skärmar. */
     table {
-        margin:2vh;
+        margin: 2vh;
         padding: 2vh;
         width: 96%;
         border-radius: 2vh;
-        
     }
 
+    /* Anpassar fontstorlek, padding och border-radie för tabellrubriker på breda skärmar. */
     th {
         font-size: 1.6vh; 
         padding: 2vh;         
-  }
+    }
 
+    /* Anpassar fontstorlek, padding, word-wrap och maximal bredd för tabellceller på breda skärmar. */
     td {
         font-size: 1.2vh; 
         padding: 0.5vh 2vh 0.5vh 2vh; 
@@ -190,9 +260,22 @@ table button:hover {
         max-width: 120vh;
     }
 
+    /* Anpassar fyllning, border-radie och fontstorlek för knappar i tabellen på breda skärmar. */
     table button {
         padding: 1vh 1.5vh; 
         border-radius: 1vh;
         font-size: 1.2vh; 
     }
+
+    /* sätt bredder på de olika kolumnerna */
+th:first-child,
+td:first-child {
+    width: 60%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    width: 10%;
+}
+
 }
