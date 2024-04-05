@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Todo App</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lest you forget!</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="joni2307" />
+    <meta
+      name="keywords"
+      content="todo, task, list, reminder, note, note-taking, note-making, note-keeping, task-list, task-manager, task-reminder, task-scheduler, task-tracker, task-organizer, task-planner, task-manager, task-logger, task-recorder"
+    />
+    <meta
+      name="Lest you forget!"
+      content="A simple todo list application that allows you to add, remove, edit, save, discard and reset tasks."
+    />
+    <meta
+      name="description"
+      content="A simple todo list application that allows you to add, remove, edit, save, discard and reset tasks."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="language" content="English" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
     <h1>Lest you forget!</h1>
     <div id="communication"></div>
     <form id="todo-form">
-        <input type="text" id="todo-task" name="task" placeholder="Task to add" required>
-        <select id="todo-priority" name="priority">
-            <option value="0">-</option>
-            <option value="1">High</option>
-            <option value="2">Medium</option>
-            <option value="3">Low</option>
-        </select>
-        <div>
-        <button id= "addButton" type="button">Add task</button>
-        <button id= "saveButton" type="button">Save changes</button>
-        <button id= "discardButton" type="button">Discard changes</button>
-        <button id= "resetButton" type="button">Reset input fields</button>
-    </div>
+      <input
+        type="text"
+        id="todo-task"
+        name="task"
+        placeholder="Task to add"
+        required
+      />
+      <select id="todo-priority" name="priority">
+        <option value="0">-</option>
+        <option value="1">High</option>
+        <option value="2">Medium</option>
+        <option value="3">Low</option>
+      </select>
+      <div>
+        <button id="addButton" type="button">Add task</button>
+        <button id="saveButton" type="button">Save changes</button>
+        <button id="discardButton" type="button">Discard changes</button>
+        <button id="resetButton" type="button">Reset input fields</button>
+      </div>
     </form>
-    
+
     <ul id="todo-list"></ul>
 
     <script type="module" src="./UIhandler.ts"></script>
-</body>
+  </body>
 </html>
