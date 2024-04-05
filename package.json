@@ -5,7 +5,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "postinstall": "npm install -g parcel",
+    "postinstall": "npm install -g parcel npm install -g parcel/transformer-webmanifest npm install -g parcel/packager-raw-url",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
