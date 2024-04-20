@@ -83,22 +83,22 @@ form#todo-form div button {
 }
 
 /* Stylar knappar för att markera todos som kompletta. */
-.completeButton {
+.completionButton {
     background-color: #205f20;
 }
 
 .revokeButton {
-    background-color: #ff4d4d;
+    background-color:  purple;
 }
 
 /* Stylar hover-effekten för knappar för att markera todos som kompletta. */
-.completeButton:hover {
+.completionButton:hover {
     background-color: #4c954c;
 }
 
 /* Stylar hover-effekten för knappar för att återkalla klarmarkeringar av todos. */
 .revokeButton:hover {
-    background-color: #ed8787;
+    background-color:rgb(147, 40, 147);
 }
 
 /* Stylar listan för att visa data. */

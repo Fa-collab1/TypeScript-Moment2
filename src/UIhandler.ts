@@ -31,17 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const success = todoList.addTodo(task, priority);
     if (!success) {
       {
-            
+
         communication("Both task and prioritization must have values!", "red"); // Justerar förseningen för att dölja meddelandet efter toningseffekten
       }
       return;
     }
     else {
-        communication("Task added successfully!", "green"); // Justerar förseningen för att dölja meddelandet efter toningseffekten
-        }
+      communication("Task added successfully!", "green"); // Justerar förseningen för att dölja meddelandet efter toningseffekten
+    }
     updateUI();
     taskInput.value = ""; // Rensa inmatningsfält efter att ha lagt till en todo
-    
+
   };
 
   function communication(message: string, messageColor: string) {
@@ -69,25 +69,25 @@ document.addEventListener("DOMContentLoaded", () => {
   saveButton.onclick = () => {
     if (editingTodoIndex !== null) {
       const updatedTask = taskInput.value;
-      let success=todoList.editTodo(
+      let success = todoList.editTodo(
         editingTodoIndex,
         updatedTask,
         parseInt(prioritySelect.value, 10)
       );
-      if (success)
-      {updateUI();
-      communication("Task updated successfully!", "green"); // Justerar förseningen för att dölja meddelandet efter toningseffekten
-      editingTodoIndex = null; // Återställ variabeln för redigeringsTodoIndex
-    }
+      if (success) {
+        updateUI();
+        communication("Task updated successfully!", "green"); // Justerar förseningen för att dölja meddelandet efter toningseffekten
+        editingTodoIndex = null; // Återställ variabeln för redigeringsTodoIndex
+      }
       else communication("Task update failed!", "red"); // Justerar förseningen för att dölja meddelandet efter toningseffekten
-     
+
     }
   };
 
   discardButton.onclick = () => {
     updateUI();
   };
-  
+
   function updateUI() {
     if (!todoListElement) return;
     todoListElement.innerHTML = ""; // Rensa todo-listan
@@ -161,11 +161,42 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteButton.onclick = () => {
         let success = todoList.deleteTodo(index);
         updateUI();
-if (success)communication("Task deleted successfully!", "green"); // Justerar förseningen för att dölja meddelandet efter toningseffekten
-else communication("Task deletion failed!", "red"); // Justerar förseningen för att dölja meddelandet efter toningseffekten
+        if (success) communication("Task deleted successfully!", "green");
+        else communication("Task deletion failed!", "red"); 
 
       };
       actionCell.appendChild(deleteButton);
+
+
+      if(completedCell.textContent === "-") {
+      
+      const completionButton = document.createElement("button");
+      completionButton.textContent = "Mark as completed";
+      completionButton.className = "completionButton";
+      completionButton.onclick = () => {
+        let success = todoList.markTodoCompleted(index);
+        updateUI();
+        if (success) communication("Task marked as completed!", "green"); 
+        else communication("Task update failed!", "red"); 
+
+      };
+      actionCell.appendChild(completionButton);
+    }
+    else {
+      const revokeButton = document.createElement("button");
+      revokeButton.textContent = "Revoke completion";
+      revokeButton.className = "revokeButton";
+      revokeButton.onclick = () => {
+        let success = todoList.revokeTodoCompleted(index);
+        updateUI();
+        if (success) communication("Task completion revoked!", "green"); 
+        else communication("Task update failed!", "red"); 
+
+      };
+      actionCell.appendChild(revokeButton);
+    
+    }
+
 
       tr.appendChild(actionCell);
       tbody.appendChild(tr);

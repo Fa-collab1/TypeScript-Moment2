@@ -30,27 +30,31 @@ export class TodoList {
     return true;
   }
 
-  markTodoCompleted(todoIndex: number): void {
+  markTodoCompleted(todoIndex: number): boolean {
     // Markerar en todo som avklarad
     if (this.todos[todoIndex]) {
       this.todos[todoIndex].completed = true;
       this.todos[todoIndex].completedDate = new Date().toISOString().split("T")[0];
       this.saveToLocalStorage(); // Spara ändringar i lokal lagring
+      return true;
     }
+    return false;
   }
 
-  revokeTodoCompleted(todoIndex: number): void {
+  revokeTodoCompleted(todoIndex: number): boolean {
     // Återställer en todo till ej avklarad
     if (this.todos[todoIndex]) {
       this.todos[todoIndex].completed = false;
       this.todos[todoIndex].completedDate = undefined;
       this.saveToLocalStorage(); // Spara ändringar i lokal lagring
+      return true;
     }
+    return false;
   }
 
   editTodo(todoIndex: number, task: string, priority: number): boolean {
     // Redigerar en specifik todo
-    
+
     if (!task || priority < 1 || priority > 3) {
       return false;
     }
